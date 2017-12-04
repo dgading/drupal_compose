@@ -1,0 +1,22 @@
+# For MySQL
+# Use root/example as user/password credentials
+version: '3'
+services:
+  php:
+    build: .
+    volumes:
+      - ./drupal/web/modules:/var/www/html/web/modules
+      - ./drupal/web/themes:/var/www/html/web/themes
+      - ./drupal/web/profiles:/var/www/html/web/profiles
+      - ./php/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    ports:
+      - 9000:80
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+  db:
