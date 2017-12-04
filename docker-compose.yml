@@ -8,6 +8,8 @@ services:
       - ./drupal/web/modules:/var/www/html/web/modules
       - ./drupal/web/themes:/var/www/html/web/themes
       - ./drupal/web/profiles:/var/www/html/web/profiles
+      - ./drupal/composer.json:/var/www/html/composer.json
+      - ./drupal/composer.lock:/var/www/html/composer.lock
       - ./php/000-default.conf:/etc/apache2/sites-available/000-default.conf
     ports:
       - 9000:80
