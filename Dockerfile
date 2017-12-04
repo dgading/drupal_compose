@@ -30,4 +30,4 @@ COPY ./drupal /var/www/html
 WORKDIR /var/www/html
 RUN composer install --prefer-source --no-interaction
 RUN chown -R www-data:www-data web/sites web/modules web/themes
-ENV PATH="~/.composer/vendor/bin:./vendor/bin:${PATH}"
+ENV PATH="~/.composer/vendor/bin:../vendor/bin:${PATH}"
