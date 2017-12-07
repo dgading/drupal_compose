@@ -249,7 +249,7 @@ $databases = array();
  *   );
  * @endcode
  */
-$config_directories = array();
+$config_directories['sync'] = '../config/sync';
 
 /**
  * Settings:
