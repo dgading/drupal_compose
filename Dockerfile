@@ -28,6 +28,8 @@ RUN curl -sS https://getcomposer.org/installer | php \
 
 COPY ./drupal /var/www/html
 WORKDIR /var/www/html
-RUN composer install --prefer-source --no-interaction
-RUN chown -R www-data:www-data web/sites web/modules web/themes
+RUN composer install --prefer-source --no-interaction && \
+    chown -R www-data:www-data web/sites web/modules web/themes
 ENV PATH="~/.composer/vendor/bin:../vendor/bin:${PATH}"
+
+WORKDIR /var/www/html/web
