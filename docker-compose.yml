@@ -11,6 +11,8 @@ services:
       MYSQL_ROOT_PASSWORD: example
     volumes:
       - db:/var/lib/mysql
+    ports: 
+      - '3306:3306'
   php:
     build: .
     volumes:

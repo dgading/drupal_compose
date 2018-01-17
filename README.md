@@ -31,3 +31,16 @@ All modules and patches should be added through `composer require` or `composer 
 
 ### Theming
 All custom module and themes should be worked on locally and their volumes will be synced with the Docker environments. 
+
+### Using MySQL
+Using a tool like Sequel Pro add the following connection details to the Standard tab. 
+1. Host => localhost or 127.0.0.1
+1. Username => root
+1. Password => example
+1. Port => 3306 or whatever you have on line 15 in docker-compose.yml
+
+If you want command line access:
+1. Find the mysql container with `docker ps`.
+1. Log into the container using `docker exec -it <container id> bash`
+1. Once in the container, run `mysql -u root -p`
+1. If you are still using the defaults, enter `example` at the prompt and start mysqling. 
